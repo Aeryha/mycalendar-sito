@@ -1,0 +1,53 @@
+:root {
+  --testo: #1b1b1f;
+  --tenue: #5a5a66;
+  --bordo: #e2e2ea;
+  --sfondo: #ffffff;
+  --accento: #3b5bdb;
+  --nota: #f7f7fb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --testo: #e8e8ee;
+    --tenue: #a3a3b2;
+    --bordo: #32323c;
+    --sfondo: #16161a;
+    --accento: #8da2fb;
+    --nota: #1e1e24;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  max-width: 46rem;
+  background: var(--sfondo);
+  color: var(--testo);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .4rem; letter-spacing: -.02em; }
+h2 { font-size: 1.2rem; margin: 2.4rem 0 .6rem; letter-spacing: -.01em; }
+h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+p, li { color: var(--testo); }
+a { color: var(--accento); }
+.sottotitolo { color: var(--tenue); margin: 0 0 2rem; font-size: 1.05rem; }
+.aggiornato { color: var(--tenue); font-size: .9rem; }
+nav { margin: 0 0 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--bordo); }
+nav a { margin-right: 1.25rem; text-decoration: none; font-weight: 500; }
+nav a:hover { text-decoration: underline; }
+.sintesi {
+  background: var(--nota);
+  border: 1px solid var(--bordo);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.5rem 0 2rem;
+}
+.sintesi p:last-child { margin-bottom: 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .94rem; }
+th, td { text-align: left; vertical-align: top; padding: .6rem .7rem; border-bottom: 1px solid var(--bordo); }
+th { font-weight: 600; color: var(--tenue); font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; }
+code { background: var(--nota); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--bordo); color: var(--tenue); font-size: .9rem; }
+ul { padding-left: 1.3rem; }
+li { margin: .3rem 0; }
