@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — MyCalendar</title>
+<meta name="description" content="MyCalendar privacy policy: what data the app touches, where it stays, and who can read it.">
+<link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+<nav>
+  <a href="privacy-en.html">Privacy Policy</a>
+  <a href="terms-en.html">Terms of Service</a>
+  <a href="privacy.html">Italiano</a>
+</nav>
+
+<h1>Privacy Policy</h1>
+<p class="sottotitolo"><strong>MyCalendar</strong> for Android
+(application ID <code>aeryha.mycalendar</code>)</p>
+<p class="aggiornato">Effective 7 November 2026 · Version 1.0</p>
+
+<div class="sintesi">
+  <p><strong>In short.</strong> MyCalendar has no server. The developer does not receive,
+  store or have any way of reading your data: it stays on your phone and in your own Google
+  account. The app carries no advertising, collects no usage statistics, profiles no one, and
+  neither sells nor shares data with third parties.</p>
+  <p>Three things, however, do leave your phone, and they deserve to be stated plainly:
+  <strong>synchronisation</strong> with the Google services you choose to connect,
+  <strong>speech recognition</strong>, which is performed by Android's own system service
+  rather than by the app, and a <strong>one-time download</strong> of the language model used
+  for voice input. Each is explained below.</p>
+</div>
+
+<h2>1. Who publishes the app, and how to reach them</h2>
+<p>MyCalendar is published by <strong>Giulia Campatelli</strong>, an individual based in
+Italy, who is the data controller for the purposes of Regulation (EU) 2016/679 (GDPR).</p>
+<p>For anything concerning this policy or your data, write to
+<a href="mailto:aeryha.support@gmail.com">aeryha.support@gmail.com</a>.</p>
+<p>Because the app has no server of its own and your data is never transmitted to the
+developer, no processing takes place on the developer's own infrastructure. Requests
+concerning data held in your Google account should also be addressed to Google, which
+provides the service for that data: see <a href="#your-rights">section 8</a>.</p>
+
+<h2>2. The principle behind the design</h2>
+<p>MyCalendar is built so that the developer <strong>cannot</strong> see your data — not
+merely so that they choose not to look. There is no app server, no app database and no app
+account: there is your phone and your Google account. When you grant MyCalendar access to
+your calendar, you are granting it to a program running on <em>your</em> device that talks to
+Google directly.</p>
+
+<h2>3. The data the app handles, one item at a time</h2>
+
+<h3>3.1 Calendar events</h3>
+<p><strong>What:</strong> title, date, time, duration, description, location, recurrence,
+reminders, and the app's own additional fields (event type, counters, a link to a note, and
+any associated scheduled message).</p>
+<p><strong>Why:</strong> this is the substance of the app — displaying your events, editing
+them, and keeping your phone and Google Calendar in step.</p>
+<p><strong>Where it stays:</strong> in your Google Calendar, and in a local copy on your phone
+that allows the app to work without a network connection. Access uses the
+<code>https://www.googleapis.com/auth/calendar.events</code> scope, which covers
+<strong>events only</strong>, within the calendars of your own account.</p>
+
+<h3>3.2 App configuration (backup to Google Drive)</h3>
+<p>So that you do not have to set everything up again if you change or reinstall your phone,
+the app saves its configuration to a file in the <strong>application's private folder</strong>
+on your Google Drive (<code>appDataFolder</code>), using the
+<code>https://www.googleapis.com/auth/drive.appdata</code> scope. This scope
+<strong>gives no access to the rest of your Drive</strong>: the app can read and write only
+what it created itself, and no other application can read that folder.</p>
+<p>That file contains your event types and their counters, your combinations, your theme and
+appearance preferences, your language, your lists of notes and tasks, your scheduled messages
+(including the recipient and the message text), and the list of connected Google accounts,
+limited to <strong>account identifier, email address and display name</strong>.</p>
+<p>It does <strong>not</strong> contain your access credentials, your profile picture, the
+images you have chosen for themes, or your events — which are already in Google Calendar.</p>
+
+<h3>3.3 Google account identity</h3>
+<p><strong>What:</strong> email address, display name and profile picture, through the basic
+<code>userinfo.email</code> and <code>userinfo.profile</code> scopes.</p>
+<p><strong>Why:</strong> to show you which account you are working in, and to let you connect
+more than one and tell them apart.</p>
+<p><strong>Where it stays:</strong> on your phone; the email address and display name are
+also included in the backup described in 3.2. The profile picture is not saved.</p>
+
+<h3>3.4 Access credentials</h3>
+<p>So that you are not asked to sign in every time you open the app, the tokens issued by
+Google are kept in the <strong>operating system's encrypted store</strong>
+(<em>Android Keystore</em>, via <code>flutter_secure_storage</code>). They never leave the
+device and, in particular, they are <strong>not included in the Drive backup</strong>. After
+reinstalling, you will therefore need to reconnect your accounts by hand.</p>
+
+<h3>3.5 Contacts</h3>
+<p>If you use <em>scheduled messages</em>, the app asks for permission to read your contacts
+<strong>solely in order to show you a list to pick a recipient from</strong>. The reading
+happens on your phone. Your contacts are not copied, not indexed and not transmitted to
+anyone.</p>
+<p>For the contact you pick, the app keeps the <strong>address</strong> (phone number, email
+address or Telegram username) and the text of the message: on your phone and, as set out in
+3.2, in the backup held in your own private folder on Drive. You can use scheduled messages
+<strong>without</strong> granting access to your contacts, by typing the address yourself.</p>
+
+<h3>3.6 Microphone and voice input</h3>
+<p>This section calls for precision, because the app and the operating system do two different
+things.</p>
+<ul>
+  <li><strong>What MyCalendar does:</strong> when you tap the microphone icon, it asks Android
+  to transcribe what you say, and receives back <strong>the text alone</strong>. The app does
+  not record audio files, does not retain them, and does not send them anywhere.</li>
+  <li><strong>What Android does:</strong> the transcription is carried out by the
+  <strong>speech recognition service installed on your device</strong>. On most Android phones
+  that service is provided by Google and, depending on the device and its settings, it
+  <strong>may process the audio on Google's servers</strong> rather than on the phone. Where
+  that happens, the audio is processed under
+  <a href="https://policies.google.com/privacy">Google's privacy policy</a> and according to
+  your device's voice settings, outside this app's control.</li>
+</ul>
+<p>If you would rather avoid this, do not grant the microphone permission — or revoke it — and
+enter your events by typing: the app remains fully usable.</p>
+<p>The transcribed <strong>text</strong> is then interpreted by a language model running
+<strong>on your phone</strong>: the sentence is not sent to any artificial intelligence
+service. See 4.2 for the one connection associated with this feature.</p>
+
+<h3>3.7 Images</h3>
+<p>If you personalise a theme with an image of your own, the app opens the system picker and
+you choose a single image from your gallery. The app does <strong>not</strong> request access
+to your gallery as a whole, nor camera permission. The chosen image is copied into the app's
+private folder on the phone, <strong>stays on the device</strong>, and is not included in the
+Drive backup.</p>
+
+<h3>3.8 Notifications and alarms</h3>
+<p>Reminders and scheduled messages use Android's notifications and alarms, set
+<strong>locally</strong> on the device. The app asks to be allowed to start after the phone
+restarts for one purpose only: to re-queue alarms that would otherwise be lost. No data
+leaves the phone for this feature.</p>
+
+<h3>3.9 Network status</h3>
+<p>The app checks whether the device is connected, in order to decide whether to synchronise
+immediately or queue your changes. This is a local status check: it involves no geolocation,
+and indeed the app <strong>requests no location permission at all</strong>.</p>
+
+<h2>4. Third parties involved</h2>
+
+<h3>4.1 Google</h3>
+<p>Google provides the services the app relies on: sign-in, Google Calendar, Google Drive and
+— in the circumstances described in 3.6 — the device's system speech recognition. Processing
+carried out by Google is governed by
+<a href="https://policies.google.com/privacy">Google's privacy policy</a>. What the app writes
+to Calendar and Drive goes into <strong>your</strong> account, not into an account belonging
+to the developer.</p>
+
+<h3>4.2 Hugging Face (a single download, for voice input)</h3>
+<p>Voice input relies on a language model that runs on your phone. The model file is not
+bundled with the app, because it would add roughly a gigabyte: it is
+<strong>downloaded the first time you enable the feature</strong> from
+<a href="https://huggingface.co">huggingface.co</a>. As with any download, whoever serves the
+file sees the technical details needed to deliver it, including your device's
+<strong>IP address</strong>. Neither your events, nor your voice, nor any personal data is
+sent: it is a request to download a public file. If you do not use voice input,
+<strong>this download never happens</strong>.</p>
+
+<h3>4.3 The app you choose for a scheduled message</h3>
+<p>When you tap the notification for a scheduled message, the app opens whichever application
+corresponds to the channel you chose — WhatsApp, SMS, email or Telegram — with the recipient
+and text already filled in. From that point the data is in the hands of that application and
+its operator, on their terms. <strong>Sending remains your own act:</strong> MyCalendar
+prepares the message, it does not send it.</p>
+
+<h3>4.4 Sharing an event</h3>
+<p>If you use the sharing feature, the app generates a calendar file (<code>.ics</code>) and
+hands it to Android's share sheet. Where it goes is your choice at that moment.</p>
+
+<h2>5. Limited Use of data obtained from Google APIs</h2>
+<p><em>&ldquo;MyCalendar's use and transfer to any other app of information received from
+Google APIs will adhere to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+Services User Data Policy</a>, including the Limited Use requirements.&rdquo;</em></p>
+<p>In practice this means that data obtained from Google Calendar and Google Drive is used
+<strong>only</strong> to provide the app features described above, and <strong>not</strong>
+for advertising, profiling, resale, training artificial intelligence models, or reading by
+human beings.</p>
+
+<h2>6. What the app does not do</h2>
+<p>The following statements can be verified by inspecting the application. MyCalendar:</p>
+<ul>
+  <li><strong>carries no advertising</strong>, and contains no advertising SDK of any kind;</li>
+  <li><strong>collects no usage statistics</strong>: it includes no analytics, telemetry or
+  automated crash reporting;</li>
+  <li><strong>assigns no advertising identifiers</strong> and does not track your
+  behaviour;</li>
+  <li><strong>does not sell, rent or otherwise disclose</strong> personal data to anyone;</li>
+  <li><strong>does not send your data to the developer</strong>, who has no technical means of
+  receiving it;</li>
+  <li><strong>does not request</strong> location, camera, or broad file access permissions.</li>
+</ul>
+<h3>6.1 Complete list of Android permissions</h3>
+<p>These are <strong>all</strong> the permissions the application declares. The first six are
+required by the features described above; the last four are technical permissions introduced
+by the software components used for notifications, scheduled work and reading network status,
+and <strong>none of them grants access to personal data</strong>.</p>
+<table>
+  <tr><th>Permission</th><th>What it is for</th></tr>
+  <tr><td><code>INTERNET</code></td><td>synchronisation with Google services</td></tr>
+  <tr><td><code>READ_CONTACTS</code></td><td>choosing the recipient of a scheduled message (3.5)</td></tr>
+  <tr><td><code>RECORD_AUDIO</code></td><td>entering events by voice (3.6)</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>showing reminders and scheduled messages</td></tr>
+  <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>firing a reminder at the exact time you chose</td></tr>
+  <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>re-queueing alarms after the phone restarts</td></tr>
+  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>knowing whether there is a connection, to sync or queue (3.9)</td></tr>
+  <tr><td><code>FOREGROUND_SERVICE</code></td><td>finishing a synchronisation already under way without it being cut short</td></tr>
+  <tr><td><code>WAKE_LOCK</code></td><td>allowing a notification to arrive while the screen is off</td></tr>
+  <tr><td><code>VIBRATE</code></td><td>notification vibration</td></tr>
+</table>
+<p>The application does not request, and does not contain, permissions for
+<strong>location</strong>, <strong>camera</strong>, <strong>broad file access</strong>,
+<strong>reading SMS</strong>, <strong>call logs</strong> or <strong>querying which other apps
+are installed</strong>.</p>
+
+<h2>7. Retention and deletion</h2>
+<p>Since there is no server, there is nothing for the developer to delete. Your data remains
+for as long as you keep it, and you can remove it as follows:</p>
+<ul>
+  <li><strong>Data on your phone</strong> (the local copy of your events, your settings, theme
+  images, access tokens): removed by uninstalling the app, or from
+  <em>Settings &rarr; Apps &rarr; MyCalendar &rarr; Storage &rarr; Clear data</em>.</li>
+  <li><strong>The backup on Google Drive</strong>: removed from your
+  <a href="https://drive.google.com/drive/settings">Google Drive settings</a>, in the section
+  for managing connected apps, by choosing to delete the application's hidden app data.</li>
+  <li><strong>The permissions you granted the app</strong>: revoked at
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+  This must be done for each account you had connected.</li>
+  <li><strong>Events in Google Calendar</strong>: these remain, because they are yours. Delete
+  them in Google Calendar as you would any other event.</li>
+</ul>
+<p>Revoking permissions or uninstalling the app <strong>does not delete</strong> events
+already present in your calendar.</p>
+
+<h2 id="your-rights">8. Your rights</h2>
+<p>If you are in the European Economic Area or the United Kingdom, Regulation (EU) 2016/679
+(GDPR) grants you rights of access, rectification, erasure, restriction, objection and
+portability in respect of your personal data.</p>
+<p>For data handled through MyCalendar, these rights are exercised directly and immediately:
+the data is in your hands and in your Google account, and you can inspect, correct, export or
+erase it at any time using the means set out in section 7 and those provided by Google
+(<a href="https://takeout.google.com">Google Takeout</a> for export). The developer holds no
+copy against which a request could be made.</p>
+<p>For questions, clarifications or concerns you are nonetheless welcome to write to
+<a href="mailto:aeryha.support@gmail.com">aeryha.support@gmail.com</a>. You also have the
+right to lodge a complaint with the competent supervisory authority; in Italy this is the
+<a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a>.</p>
+
+<h2>9. Children</h2>
+<p>MyCalendar is a personal organisation tool and is not directed at children under 13. No
+data is collected for the purpose of determining a user's age, and the app asks for no
+personal information from whoever installs it. Using the app requires a Google account, which
+is subject to Google's own age requirements.</p>
+
+<h2>10. Security</h2>
+<p>Communication with Google services takes place over encrypted connections (HTTPS). Access
+credentials are held in the operating system's encrypted store. Because data passes through no
+intermediate server, there is no central store that could be breached. As with any
+application, it remains true that the security of the data on your device depends on how well
+the device itself and the connected Google account are protected: a screen lock and two-step
+verification are the two most effective defences.</p>
+
+<h2>11. International transfers</h2>
+<p>The developer transfers no data, having none. The Google services used may process data on
+infrastructure located outside the European Economic Area, on the terms and with the
+safeguards described in
+<a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+
+<h2>12. Changes to this policy</h2>
+<p>If the app changes in a way that affects different data, this policy will be updated
+<strong>before</strong> the new version is published, and the effective date at the top of the
+page will be changed accordingly. Earlier versions remain available in this site's public
+history.</p>
+
+<h2>13. About this English version</h2>
+<p>This is the English version of a policy originally drawn up in Italian, provided for your
+convenience. The <a href="privacy.html">Italian text</a> is the authoritative one; in the
+event of any discrepancy between the two, the Italian text prevails. Both describe the same
+version 1.0 of the policy, effective 7 November 2026.</p>
+
+<footer>
+  <p>MyCalendar · <a href="terms-en.html">Terms of Service</a> ·
+  <a href="privacy.html">Informativa sulla privacy (italiano)</a> ·
+  <a href="index.html">Home</a></p>
+  <p>Effective 7 November 2026.</p>
+</footer>
+
+</body>
+</html>
