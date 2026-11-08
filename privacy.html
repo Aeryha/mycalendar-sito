@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informativa sulla privacy — MyCalendar</title>
+<meta name="description" content="Informativa sulla privacy di MyCalendar: quali dati l'app tocca, dove restano e chi può vederli.">
+<link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="termini.html">Termini</a>
+</nav>
+
+<h1>Informativa sulla privacy</h1>
+<p class="sottotitolo">Applicazione Android <strong>MyCalendar</strong>
+(identificativo <code>aeryha.mycalendar</code>)</p>
+<p class="aggiornato">In vigore dal 7 novembre 2026 · Versione 1.0</p>
+
+<div class="sintesi">
+  <p><strong>In breve.</strong> MyCalendar non ha un server. Chi pubblica l'app non riceve,
+  non conserva e non può leggere i tuoi dati: restano sul tuo telefono e nel tuo account
+  Google. L'app non contiene pubblicità, non raccoglie statistiche d'uso, non profila nessuno
+  e non vende né cede dati a terzi.</p>
+  <p>Tre cose, però, escono dal telefono e vanno dette con chiarezza: la
+  <strong>sincronizzazione</strong> con i servizi Google che hai scelto di collegare, il
+  <strong>riconoscimento vocale</strong>, che è svolto dal servizio di sistema di Android e
+  non dall'app, e il <strong>download, una volta sola,</strong> del modello linguistico per
+  l'inserimento vocale. I dettagli sono qui sotto.</p>
+</div>
+
+<h2>1. Chi pubblica l'app e come contattarlo</h2>
+<p>MyCalendar è pubblicata da <strong>Giulia Campatelli</strong>, persona fisica, con sede in
+Italia. Questo soggetto è il titolare del trattamento ai sensi del Regolamento (UE)
+2016/679.</p>
+<p>Contatto per qualunque questione riguardi questa informativa o i tuoi dati:
+<a href="mailto:aeryha.support@gmail.com">aeryha.support@gmail.com</a>.</p>
+<p>Poiché l'app non dispone di alcun server e i dati non vengono mai trasmessi a chi la
+pubblica, non viene svolta alcuna operazione di trattamento su infrastrutture proprie. Le
+richieste relative ai dati conservati nel tuo account Google vanno rivolte anche a Google,
+che per quei dati è il fornitore del servizio: vedi il <a href="#punto8">punto 8</a>.</p>
+
+<h2>2. Il principio di fondo</h2>
+<p>MyCalendar è costruita in modo che chi la pubblica <strong>non possa</strong> vedere i tuoi
+dati, non per scelta di non guardarli. Non esiste un server dell'app, non esiste un database
+dell'app, non esiste un account dell'app: esiste il tuo telefono e il tuo account Google.
+Quando concedi a MyCalendar l'accesso al tuo calendario, lo concedi a un programma che gira
+sul <em>tuo</em> dispositivo e parla direttamente con Google.</p>
+
+<h2>3. Dati trattati, uno per uno</h2>
+
+<h3>3.1 Eventi del calendario</h3>
+<p><strong>Cosa:</strong> titolo, data, ora, durata, descrizione, luogo, ricorrenza, promemoria
+e i campi aggiuntivi dell'app (tipo di evento, contatori, collegamento a un memo, messaggio
+programmato associato).</p>
+<p><strong>Perché:</strong> sono il contenuto stesso dell'app — mostrarli, modificarli e
+tenerli allineati fra telefono e Google Calendar.</p>
+<p><strong>Dove restano:</strong> nel tuo Google Calendar e in una copia locale sul telefono,
+che serve a far funzionare l'app senza rete. L'accesso avviene con l'autorizzazione
+<code>https://www.googleapis.com/auth/calendar.events</code>, che riguarda
+<strong>soltanto gli eventi</strong> dei calendari del tuo account.</p>
+
+<h3>3.2 Configurazione dell'app (copia di sicurezza su Google Drive)</h3>
+<p>Per non farti rifare le impostazioni se cambi o reinstalli il telefono, l'app salva la
+propria configurazione in un file nella <strong>cartella privata dell'applicazione</strong>
+sulla tua Google Drive (<code>appDataFolder</code>), con l'autorizzazione
+<code>https://www.googleapis.com/auth/drive.appdata</code>. Questa autorizzazione
+<strong>non dà accesso agli altri file della tua Drive</strong>: l'app può leggere e scrivere
+solo ciò che ha creato lei, e nessun'altra applicazione può leggere quella cartella.</p>
+<p>In quel file ci sono: i tipi di evento e i loro contatori, le combinazioni, il tema e le
+preferenze d'aspetto, la lingua, le liste di memo e task, i messaggi programmati (incluso il
+destinatario e il testo), e l'elenco degli account Google collegati limitato a
+<strong>identificativo, indirizzo email e nome visualizzato</strong>.</p>
+<p><strong>Non</strong> finiscono in quel file: le credenziali di accesso, l'immagine del
+profilo, le immagini che hai scelto per i temi, e gli eventi (che stanno già su Google
+Calendar).</p>
+
+<h3>3.3 Identità dell'account Google</h3>
+<p><strong>Cosa:</strong> indirizzo email, nome visualizzato e immagine del profilo, tramite
+le autorizzazioni di base <code>userinfo.email</code> e <code>userinfo.profile</code>.</p>
+<p><strong>Perché:</strong> mostrarti con quale account stai lavorando e permetterti di
+collegarne più di uno distinguendoli.</p>
+<p><strong>Dove restano:</strong> sul telefono; email e nome anche nella copia di sicurezza
+descritta al punto 3.2. L'immagine del profilo non viene salvata.</p>
+
+<h3>3.4 Credenziali di accesso</h3>
+<p>Per non chiederti la password a ogni avvio, l'app conserva i token rilasciati da Google
+nell'<strong>archivio cifrato del sistema operativo</strong> (<em>Android Keystore</em>,
+tramite <code>flutter_secure_storage</code>). Non lasciano mai il dispositivo: in particolare
+<strong>non vengono inclusi nella copia di sicurezza su Drive</strong>. Dopo una
+reinstallazione dovrai perciò ricollegare gli account a mano.</p>
+
+<h3>3.5 Contatti</h3>
+<p>Se usi i <em>messaggi programmati</em>, l'app chiede il permesso di leggere la rubrica
+<strong>solo per mostrarti l'elenco da cui scegliere il destinatario</strong>. La lettura
+avviene sul telefono. La rubrica non viene copiata, né indicizzata, né trasmessa a nessuno.</p>
+<p>Del contatto che scegli vengono conservati il <strong>recapito</strong> (numero di
+telefono, indirizzo email o nome utente Telegram) e il testo del messaggio: sul telefono e,
+come scritto al punto 3.2, nella copia di sicurezza nella tua cartella privata su Drive.
+Puoi usare i messaggi programmati anche <strong>senza</strong> concedere l'accesso alla
+rubrica, digitando il recapito a mano.</p>
+
+<h3>3.6 Microfono e inserimento vocale</h3>
+<p>Questo punto merita precisione, perché l'app e il sistema operativo fanno due cose
+diverse.</p>
+<ul>
+  <li><strong>Cosa fa MyCalendar:</strong> quando tocchi l'icona del microfono, chiede ad
+  Android di trascrivere ciò che dici e riceve indietro <strong>soltanto il testo</strong>.
+  L'app non registra file audio, non li conserva e non li invia a nessuno.</li>
+  <li><strong>Cosa fa Android:</strong> la trascrizione è svolta dal
+  <strong>servizio di riconoscimento vocale installato sul tuo dispositivo</strong>. Su molti
+  telefoni Android quel servizio è fornito da Google e, a seconda del dispositivo e delle sue
+  impostazioni, <strong>può elaborare l'audio sui server di Google</strong> anziché sul
+  telefono. In quel caso il trattamento dell'audio avviene sotto la
+  <a href="https://policies.google.com/privacy">privacy policy di Google</a> e secondo le
+  impostazioni vocali del tuo dispositivo, al di fuori del controllo di questa app.</li>
+</ul>
+<p>Se preferisci evitarlo, non concedere il permesso del microfono — o revocalo — e inserisci
+gli eventi scrivendo: l'app resta pienamente utilizzabile.</p>
+<p>Il <strong>testo</strong> trascritto viene poi interpretato da un modello linguistico che
+gira <strong>sul telefono</strong>: la frase non viene inviata a nessun servizio di
+intelligenza artificiale. Vedi il punto 4.2 per l'unica connessione collegata a questa
+funzione.</p>
+
+<h3>3.7 Immagini</h3>
+<p>Se personalizzi un tema con una tua immagine, l'app apre il selettore di sistema e tu
+scegli una singola immagine dalla galleria. L'app <strong>non</strong> chiede l'accesso
+all'intera galleria né il permesso della fotocamera. L'immagine scelta viene copiata nella
+cartella privata dell'app sul telefono, <strong>resta sul dispositivo</strong> e non viene
+inclusa nella copia di sicurezza su Drive.</p>
+
+<h3>3.8 Notifiche e sveglie</h3>
+<p>Promemoria e messaggi programmati usano le notifiche e le sveglie di Android, impostate
+<strong>localmente</strong> sul dispositivo. L'app chiede di poter ripartire dopo il riavvio
+del telefono al solo scopo di rimettere in coda le sveglie che altrimenti andrebbero perse.
+Nessun dato esce dal telefono per questa funzione.</p>
+
+<h3>3.9 Stato della rete</h3>
+<p>L'app verifica se il dispositivo è collegato, per decidere se sincronizzare subito o
+accodare le modifiche. È una lettura locale di stato: non comporta geolocalizzazione, e
+infatti l'app <strong>non chiede alcun permesso di posizione</strong>.</p>
+
+<h2>4. Soggetti terzi coinvolti</h2>
+
+<h3>4.1 Google</h3>
+<p>Google fornisce i servizi su cui l'app si appoggia: autenticazione, Google Calendar, Google
+Drive e — nei casi descritti al punto 3.6 — il riconoscimento vocale di sistema.
+Il trattamento svolto da Google è disciplinato dalla
+<a href="https://policies.google.com/privacy">privacy policy di Google</a>. I dati che l'app
+scrive su Calendar e Drive finiscono nel <strong>tuo</strong> account, non in un account di
+chi pubblica l'app.</p>
+
+<h3>4.2 Hugging Face (una volta sola, per l'inserimento vocale)</h3>
+<p>La funzione di inserimento vocale usa un modello linguistico che gira sul telefono. Il
+file del modello non è incluso nell'app, perché peserebbe circa un gigabyte: viene
+<strong>scaricato la prima volta che attivi la funzione</strong> da
+<a href="https://huggingface.co">huggingface.co</a>. Come in qualunque download, il fornitore
+del file vede i dati tecnici necessari a consegnarlo, fra cui l'<strong>indirizzo IP</strong>
+del dispositivo. Non vengono inviati né i tuoi eventi, né la tua voce, né alcun dato
+personale: è una richiesta di scaricamento di un file pubblico. Se non usi l'inserimento
+vocale, <strong>questo download non avviene mai</strong>.</p>
+
+<h3>4.3 L'applicazione che scegli per un messaggio programmato</h3>
+<p>Quando tocchi la notifica di un messaggio programmato, l'app apre l'applicazione
+corrispondente al canale che avevi scelto — WhatsApp, SMS, posta elettronica o Telegram —
+con destinatario e testo già compilati. Da quel momento i dati sono nelle mani di
+quella applicazione e del suo gestore, secondo le sue condizioni. <strong>L'invio resta un tuo
+gesto:</strong> MyCalendar prepara il messaggio, non lo spedisce.</p>
+
+<h3>4.4 Condivisione di un evento</h3>
+<p>Se usi la funzione di condivisione, l'app genera un file di calendario
+(<code>.ics</code>) e lo passa al menu di condivisione di Android. La destinazione la scegli
+tu in quel momento.</p>
+
+<h2>5. Uso limitato dei dati ottenuti dalle API di Google</h2>
+<p>L'uso e il trasferimento, verso qualunque altra applicazione, delle informazioni ricevute
+dalle API di Google rispettano la
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+Services User Data Policy</a>, compresi i requisiti di uso limitato
+(<em>Limited Use</em>).</p>
+<p class="aggiornato">Testo nella formulazione originale richiesta da Google:
+<em>&ldquo;MyCalendar's use and transfer to any other app of information received from Google
+APIs will adhere to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+Services User Data Policy</a>, including the Limited Use requirements.&rdquo;</em></p>
+<p>In concreto, questo significa che i dati ottenuti da Google Calendar e Google Drive
+vengono usati <strong>solo</strong> per fornirti le funzioni dell'app descritte sopra, e
+<strong>non</strong> per pubblicità, profilazione, rivendita, addestramento di modelli di
+intelligenza artificiale, né per essere letti da esseri umani.</p>
+
+<h2>6. Quello che l'app non fa</h2>
+<p>Dichiarazioni verificabili ispezionando l'applicazione. MyCalendar:</p>
+<ul>
+  <li><strong>non contiene pubblicità</strong>, né SDK pubblicitari di alcun tipo;</li>
+  <li><strong>non raccoglie statistiche d'uso</strong>: non include strumenti di analisi,
+  telemetria o segnalazione automatica dei crash;</li>
+  <li><strong>non assegna identificativi pubblicitari</strong> e non traccia il tuo
+  comportamento;</li>
+  <li><strong>non vende, non affitta e non cede</strong> dati personali a nessuno;</li>
+  <li><strong>non invia i tuoi dati a chi la pubblica</strong>, che non ha i mezzi tecnici per
+  riceverli;</li>
+  <li><strong>non richiede</strong> permessi di posizione, fotocamera o accesso generale ai
+  file.</li>
+</ul>
+<h3>6.1 Elenco completo dei permessi Android</h3>
+<p>Questi sono <strong>tutti</strong> i permessi dichiarati dall'applicazione. I primi sei
+sono richiesti dalle funzioni descritte sopra; gli ultimi quattro sono permessi tecnici
+introdotti dai componenti software usati per le notifiche, le attività pianificate e la
+lettura dello stato della rete, e <strong>nessuno di essi dà accesso a dati personali</strong>.</p>
+<table>
+  <tr><th>Permesso</th><th>A cosa serve</th></tr>
+  <tr><td><code>INTERNET</code></td><td>sincronizzazione con i servizi Google</td></tr>
+  <tr><td><code>READ_CONTACTS</code></td><td>scegliere il destinatario di un messaggio programmato (punto 3.5)</td></tr>
+  <tr><td><code>RECORD_AUDIO</code></td><td>inserimento vocale degli eventi (punto 3.6)</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>mostrare promemoria e messaggi programmati</td></tr>
+  <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>far scattare il promemoria all'ora esatta scelta</td></tr>
+  <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>rimettere in coda le sveglie dopo il riavvio del telefono</td></tr>
+  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>sapere se c'è collegamento, per sincronizzare o accodare (punto 3.9)</td></tr>
+  <tr><td><code>FOREGROUND_SERVICE</code></td><td>completare una sincronizzazione già avviata senza che venga interrotta</td></tr>
+  <tr><td><code>WAKE_LOCK</code></td><td>permettere alla notifica di arrivare a schermo spento</td></tr>
+  <tr><td><code>VIBRATE</code></td><td>vibrazione delle notifiche</td></tr>
+</table>
+<p>Non sono richiesti, e non compaiono nell'applicazione, i permessi di
+<strong>posizione</strong>, <strong>fotocamera</strong>, <strong>accesso generale ai file</strong>,
+<strong>lettura di SMS</strong>, <strong>registro chiamate</strong> e
+<strong>rilevamento di altre app installate</strong>.</p>
+
+<h2>7. Conservazione e cancellazione</h2>
+<p>Non essendoci un server, non c'è nulla da cancellare presso chi pubblica l'app. I dati
+restano fino a quando li tieni tu, e per rimuoverli:</p>
+<ul>
+  <li><strong>Dati sul telefono</strong> (copia locale degli eventi, impostazioni, immagini
+  dei temi, token di accesso): si cancellano disinstallando l'app, oppure da
+  <em>Impostazioni &rarr; App &rarr; MyCalendar &rarr; Spazio di archiviazione &rarr; Cancella
+  dati</em>.</li>
+  <li><strong>Copia di sicurezza su Google Drive</strong>: si rimuove dalle
+  <a href="https://drive.google.com/drive/settings">impostazioni di Google Drive</a>, sezione
+  di gestione delle app collegate, scegliendo l'eliminazione dei dati nascosti
+  dell'applicazione.</li>
+  <li><strong>Autorizzazioni concesse all'app</strong>: si revocano da
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+  Va fatto per ciascun account che avevi collegato.</li>
+  <li><strong>Eventi su Google Calendar</strong>: restano, perché sono i tuoi. Si eliminano
+  da Google Calendar come qualunque altro evento.</li>
+</ul>
+<p>Revocare le autorizzazioni o disinstallare l'app <strong>non cancella</strong> gli eventi
+già presenti nel tuo calendario.</p>
+
+<h2 id="punto8">8. I tuoi diritti</h2>
+<p>Se ti trovi nello Spazio economico europeo o nel Regno Unito, il Regolamento (UE) 2016/679
+(GDPR) ti riconosce i diritti di accesso, rettifica, cancellazione, limitazione, opposizione
+e portabilità dei tuoi dati personali.</p>
+<p>Per i dati trattati tramite MyCalendar questi diritti si esercitano in modo diretto e
+immediato: i dati sono nelle tue mani e nel tuo account Google, e puoi consultarli,
+correggerli, esportarli o cancellarli in ogni momento con gli strumenti indicati al punto 7 e
+con quelli di Google (<a href="https://takeout.google.com">Google Takeout</a> per
+l'esportazione). Chi pubblica l'app non detiene copie su cui esercitare una richiesta.</p>
+<p>Per domande, chiarimenti o segnalazioni puoi comunque scrivere a
+<a href="mailto:aeryha.support@gmail.com">aeryha.support@gmail.com</a>. Hai inoltre
+diritto di proporre reclamo all'autorità di controllo competente; in Italia è il
+<a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a>.</p>
+
+<h2>9. Minori</h2>
+<p>MyCalendar è uno strumento di organizzazione personale e non è rivolta ai minori di 13
+anni. Non vengono raccolti dati con la finalità di identificare l'età degli utenti, e l'app
+non richiede alcun dato personale a chi la installa. Per usare l'app serve un account Google,
+soggetto ai requisiti di età stabiliti da Google.</p>
+
+<h2>10. Sicurezza</h2>
+<p>Le comunicazioni con i servizi Google avvengono su connessioni cifrate (HTTPS). Le
+credenziali di accesso sono conservate nell'archivio cifrato del sistema operativo. Poiché i
+dati non transitano da alcun server intermedio, non esiste un archivio centrale esposto a
+violazioni. Resta vero, come per qualunque applicazione, che la sicurezza dei dati sul
+dispositivo dipende dalla protezione del dispositivo stesso e dell'account Google collegato:
+un codice di blocco e la verifica in due passaggi sono le due difese più efficaci.</p>
+
+<h2>11. Trasferimenti internazionali</h2>
+<p>Chi pubblica l'app non trasferisce dati, non avendone. I servizi Google utilizzati possono
+trattare i dati su infrastrutture situate anche fuori dallo Spazio economico europeo, alle
+condizioni e con le garanzie descritte nella
+<a href="https://policies.google.com/privacy">privacy policy di Google</a>.</p>
+
+<h2>12. Modifiche a questa informativa</h2>
+<p>Se l'app cambierà in modo da toccare dati diversi, questa informativa sarà aggiornata
+<strong>prima</strong> che la nuova versione venga pubblicata, e la data in vigore in cima
+alla pagina sarà modificata. Le versioni precedenti restano consultabili nella cronologia
+pubblica di questo sito.</p>
+
+<footer>
+  <p>MyCalendar · <a href="index.html">Home</a> ·
+  <a href="termini.html">Termini di servizio</a></p>
+  <p>In vigore dal 7 novembre 2026.</p>
+</footer>
+
+</body>
+</html>
