@@ -26,6 +26,7 @@ body {
   font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
+.marchio { display: block; width: 72px; height: 72px; border-radius: 16px; margin: 0 0 1rem; }
 h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .4rem; letter-spacing: -.02em; }
 h2 { font-size: 1.2rem; margin: 2.4rem 0 .6rem; letter-spacing: -.01em; }
 h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
