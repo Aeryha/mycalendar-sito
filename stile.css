@@ -3,7 +3,7 @@
   --tenue: #5a5a66;
   --bordo: #e2e2ea;
   --sfondo: #ffffff;
-  --accento: #3b5bdb;
+  --accento: #7c3aed;
   --nota: #f7f7fb;
 }
 @media (prefers-color-scheme: dark) {
@@ -12,7 +12,7 @@
     --tenue: #a3a3b2;
     --bordo: #32323c;
     --sfondo: #16161a;
-    --accento: #8da2fb;
+    --accento: #c4b5fd;
     --nota: #1e1e24;
   }
 }
