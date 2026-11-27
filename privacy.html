@@ -22,7 +22,7 @@
 <h1>Informativa sulla privacy</h1>
 <p class="sottotitolo">Applicazione Android <strong>MyCalendar</strong>
 (identificativo <code>aeryha.mycalendar</code>)</p>
-<p class="aggiornato">In vigore dal 7 novembre 2026 · Versione 1.0</p>
+<p class="aggiornato">In vigore dal [DATA DEL RILASCIO] · Versione 1.1</p>
 
 <div class="sintesi">
   <p><strong>In breve.</strong> MyCalendar non ha un server. Chi pubblica l'app non riceve,
@@ -69,18 +69,22 @@ che serve a far funzionare l'app senza rete. L'accesso avviene con l'autorizzazi
 
 <h3>3.2 Configurazione dell'app (copia di sicurezza su Google Drive)</h3>
 <p>Per non farti rifare le impostazioni se cambi o reinstalli il telefono, l'app salva la
-propria configurazione in un file nella <strong>cartella privata dell'applicazione</strong>
+propria configurazione nella <strong>cartella privata dell'applicazione</strong>
 sulla tua Google Drive (<code>appDataFolder</code>), con l'autorizzazione
 <code>https://www.googleapis.com/auth/drive.appdata</code>. Questa autorizzazione
 <strong>non dà accesso agli altri file della tua Drive</strong>: l'app può leggere e scrivere
 solo ciò che ha creato lei, e nessun'altra applicazione può leggere quella cartella.</p>
-<p>In quel file ci sono: i tipi di evento e i loro contatori, le combinazioni, il tema e le
+<p>La configurazione sta in un file per ciascun dispositivo su cui usi l'app, così che le
+modifiche fatte su telefoni diversi si possano unire senza cancellarsi a vicenda. Ogni file è
+contrassegnato da un <strong>identificativo casuale</strong> generato dall'app al primo
+backup: non è legato all'hardware del telefono né a te, e serve solo a distinguere i file.</p>
+<p>In quei file ci sono: i tipi di evento e i loro contatori, le combinazioni, il tema e le
 preferenze d'aspetto, la lingua, le liste di memo e task, i messaggi programmati (incluso il
 destinatario e il testo), e l'elenco degli account Google collegati limitato a
 <strong>identificativo, indirizzo email e nome visualizzato</strong>.</p>
-<p><strong>Non</strong> finiscono in quel file: le credenziali di accesso, l'immagine del
-profilo, le immagini che hai scelto per i temi, e gli eventi (che stanno già su Google
-Calendar).</p>
+<p><strong>Non</strong> finiscono in quei file: le credenziali di accesso, l'immagine del
+profilo e gli eventi (che stanno già su Google Calendar). Le immagini che hai scelto per i
+temi stanno nella stessa cartella privata ma in file a parte: vedi il punto 3.7.</p>
 
 <h3>3.3 Identità dell'account Google</h3>
 <p><strong>Cosa:</strong> indirizzo email, nome visualizzato e immagine del profilo, tramite
@@ -132,9 +136,15 @@ funzione.</p>
 <h3>3.7 Immagini</h3>
 <p>Se personalizzi un tema con una tua immagine, l'app apre il selettore di sistema e tu
 scegli una singola immagine dalla galleria. L'app <strong>non</strong> chiede l'accesso
-all'intera galleria né il permesso della fotocamera. L'immagine scelta viene copiata nella
-cartella privata dell'app sul telefono, <strong>resta sul dispositivo</strong> e non viene
-inclusa nella copia di sicurezza su Drive.</p>
+all'intera galleria né il permesso della fotocamera. L'immagine scelta viene ridimensionata (al
+massimo 2048 pixel per lato) e copiata nella cartella privata dell'app sul telefono.</p>
+<p>Se hai collegato un account Google, quella copia viene salvata anche nella
+<strong>cartella privata dell'applicazione sulla tua Google Drive</strong>, la stessa del
+punto 3.2 e con la stessa autorizzazione <code>drive.appdata</code>, così che il tema torni
+completo su un altro dispositivo o dopo una reinstallazione. Viene salvata solo un'immagine
+che un tuo tema usa davvero; quando nessun tema la usa più, l'app la toglie da Drive da sola
+dopo 30 giorni (il tempo lasciato a un altro tuo dispositivo che potrebbe usarla ancora).
+Senza un account collegato l'immagine <strong>resta soltanto sul dispositivo</strong>.</p>
 
 <h3>3.8 Notifiche e sveglie</h3>
 <p>Promemoria e messaggi programmati usano le notifiche e le sveglie di Android, impostate
@@ -240,7 +250,8 @@ restano fino a quando li tieni tu, e per rimuoverli:</p>
   dei temi, token di accesso): si cancellano disinstallando l'app, oppure da
   <em>Impostazioni &rarr; App &rarr; MyCalendar &rarr; Spazio di archiviazione &rarr; Cancella
   dati</em>.</li>
-  <li><strong>Copia di sicurezza su Google Drive</strong>: si rimuove dalle
+  <li><strong>Copia di sicurezza su Google Drive</strong> (configurazione e immagini dei
+  temi): si rimuove dalle
   <a href="https://drive.google.com/drive/settings">impostazioni di Google Drive</a>, sezione
   di gestione delle app collegate, scegliendo l'eliminazione dei dati nascosti
   dell'applicazione.</li>
@@ -296,7 +307,7 @@ pubblica di questo sito.</p>
 <footer>
   <p>MyCalendar · <a href="index.html">Home</a> ·
   <a href="termini.html">Termini di servizio</a></p>
-  <p>In vigore dal 7 novembre 2026.</p>
+  <p>In vigore dal [DATA DEL RILASCIO].</p>
 </footer>
 
 </body>
